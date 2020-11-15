@@ -1,0 +1,13 @@
+1)Create
+sls create --template aws-python3 --name ner-1pi
+2)install Plugins
+sls plugin install -n serverless-python-requirements@4.2.4
+3)test locally
+
+sls invoke local --function recognize-named-entites ==path event.json
+
+4) Deploy
+
+sudo sls deploy
+
+sls invoke  --function recognize-named-entites ==path event.json
