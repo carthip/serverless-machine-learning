@@ -1,0 +1,35 @@
+Architecture
+
+1)Image Upload(Bucket)
+2)Model (Bucket)
+3)Lambda Function
+
+boto3 pillow
+
+
+1) create
+sls create --template aws-python3 --name resent50
+
+2) python plugins
+sls plugin install -n serverless-python-requirements@4.2.4
+
+3)test locally
+sls invoke local --function resent50 --path event.json
+
+4) test globally
+
+sls invoke  --function resent50 --path event.json --log
+
+-- log --> to watch cloud watch logs .
+
+5) package
+sudo sls package
+-- Done this to avoid Large file Download and Error in prediction During lambda operations
+
+6) deploy
+sudo sls deploy
+
+
+7) check url
+
+sls info
